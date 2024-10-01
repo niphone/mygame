@@ -55,25 +55,47 @@ cat <<EOF >/etc/v2ray/config.json
     "log": {
         "loglevel": "warning"
     },
-    "inbounds": [
-        {
-            "listen": "0.0.0.0",
-            "port": 8080,
-            "protocol": "vmess",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "fb9f5f54-e951-11ec-ac4f-020017000b7b",
-                        "alterId": 0
-                    }
-                ],
-                "disableInsecureEncryption": true
-            },
-            "streamSettings": {
-                "network": "ws"
-            }
+     "inbounds": [
+    {
+      "listen": "::",
+      "port": 8000,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "fb9f5f54-e951-11ec-ac4f-020017000b7b",
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings" : {
+          "path": "/vmess?ed=2048"
         }
-    ],
+      }
+    },
+    {
+      "listen": "::",
+      "port": 8080,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "fb9f5f54-e951-11ec-ac4f-020017000b7b"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings" : {
+          "path": "/vless?ed=2048"
+        }
+      }
+    }
+  ],
     "outbounds": [
         {
             "protocol": "freedom"
