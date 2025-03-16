@@ -45,7 +45,7 @@ cat <<EOF >/etc/xray/config.json
       "streamSettings": {
         "network": "ws",
         "wsSettings" : {
-          "path": "/vmess"
+          "path": "/vmess?ed=2560"
         }
       }
     },
@@ -65,7 +65,7 @@ cat <<EOF >/etc/xray/config.json
         "network": "ws",
         "security": "none",
         "wsSettings" : {
-          "path": "/vless"
+          "path": "/vless?ed=2560"
         }
       }
     }
