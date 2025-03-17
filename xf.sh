@@ -8,7 +8,8 @@ ARCH="64"
 DOWNLOAD_PATH="/tmp/xray"
 mkdir -p ${DOWNLOAD_PATH} /etc/xray /usr/local/xray /var/log/xray
 
-TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/xtls/Xray-core/releases/latest | grep 'tag_name' | cut -d\" -f4)
+#TAG=$(wget --no-check-certificate -qO- https://api.github.com/repos/xtls/Xray-core/releases/latest | grep 'tag_name' | cut -d\" -f4)
+TAG="v1.8.24"
 
 echo "The xray latest version: ${TAG}"
 
