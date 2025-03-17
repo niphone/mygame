@@ -16,7 +16,8 @@ echo "The xray latest version: ${TAG}"
 # Download files
 XRAY_FILE="Xray-linux-${ARCH}.zip"
 echo "Downloading binary file: ${XRAY_FILE}"
-wget -O ${DOWNLOAD_PATH}/xray.zip https://github.com/XTLS/Xray-core/releases/download/${TAG}/${XRAY_FILE} >/dev/null 2>&1
+# wget -O ${DOWNLOAD_PATH}/xray.zip https://github.com/XTLS/Xray-core/releases/download/${TAG}/${XRAY_FILE} >/dev/null 2>&1
+wget -O ${DOWNLOAD_PATH}/xray.zip https://github.com/XTLS/Xray-core/releases/download/v1.8.24/Xray-linux-64.zip >/dev/null 2>&1
 echo "Download binary file: ${XRAY_FILE} completed"
 
 # Prepare
